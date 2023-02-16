@@ -11,9 +11,10 @@ import {
 
 const Bio=(props)=>{
     const { bods } = props;
+
     const getDefaultImage=(b)=>{
         try {
-            return require(b.photo);
+            return require(`../images/${b.photo}`);
         } catch {
             console.log("No photo!!")
             return require("../images/noimage.jfif");

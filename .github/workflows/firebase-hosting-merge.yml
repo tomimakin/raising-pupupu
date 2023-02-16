@@ -3,6 +3,9 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+env:
+  REACT_APP_SITE_KEY: ${{ secrets.SITE_KEY }}
+  REACT_APP_SECRET_KEY: ${{ secrets.SECRET_KEY }}
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
