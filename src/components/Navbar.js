@@ -22,7 +22,7 @@ const Navbar=()=>{
   return (
     <MDBNavbar expand="lg" fixed="top" light bgColor="light">
       <MDBContainer fluid>
-        <MDBNavbarBrand href="/">{"NAME"}</MDBNavbarBrand>
+        <MDBNavbarBrand href="/">{process.env.REACT_APP_NAME}</MDBNavbarBrand>
         <MDBNavbarToggler
           type="button"
           onClick={() => setShowBasic(!showBasic)}

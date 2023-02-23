@@ -25,7 +25,7 @@ const About=()=>{
 
     return (
         <div>
-            <Background heading="About us" subheading={"\"The best way to change the world is to educate girls.\" - Malala Yousafzai"}/>
+            <Background heading="About us" quote={"\"The best way to change the world is to educate girls.\" - Malala Yousafzai"}/>
             <div className="main-content">
                 <MDBRow>
                     <MDBCol size="3">

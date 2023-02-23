@@ -48,7 +48,7 @@ const Footer=()=> {
                     </MDBCol>
                     <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
                         <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-                        <p><MDBIcon icon="envelope" className="me-3" />info@name.com</p>
+                        <p><MDBIcon icon="envelope" className="me-3" />info@{process.env.REACT_APP_NAME.replace(" ", "").toLowerCase()}.com</p>
                         <p><MDBIcon icon="phone" className="me-3" /> + 01 234 567 88</p>
                         <br />
                         <p>
@@ -62,7 +62,7 @@ const Footer=()=> {
             </MDBContainer>
         </section>
         <div className="text-center p-4" style={{ backgroundColor: "#333", color: "#eee" }}>
-            © {new Date().getFullYear()}<a className="text-reset fw-bold" href="https://NAME.com/">{" NAME.com"}</a>
+            © {new Date().getFullYear()}<a className="text-reset fw-bold" href="https://NAME.com/">{` ${process.env.REACT_APP_NAME.replace(" ", "").toLowerCase()}.com`}</a>
         </div>
     </MDBFooter>
   );

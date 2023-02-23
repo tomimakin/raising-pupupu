@@ -8,6 +8,7 @@ import Donate from "./screens/Donate";
 import Footer from "./screens/Footer";
 import Fundraise from "./screens/support/FundRaise";
 import Volunteer from "./screens/support/Volunteer";
+import SchoolUpgrades from "./screens/programs/SchoolUpgrades";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         </Route>
         <Route path="/support/fundraise" element={<Fundraise />} />
         <Route path="/support/volunteer" element={<Volunteer />} />
+        <Route path="/programs/schoolupgrades" element={<SchoolUpgrades />} />
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
       <Footer />

@@ -4,10 +4,50 @@ body {
 
 .main-content{
   padding: 2vmin;
-  /* height: 100vh; */
-  /* overflow-y: scroll; */
 }
 
-/* .footer-content{
+.splitHr {
+  display: block;
+  margin: 50px 0 -15px;
   width: 100%;
-} */
+  height: 1px;
+  border: 0;  
+}
+
+hr {
+  background: linear-gradient(#800000, #453986);
+}
+
+.borderedHr {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  margin: 0;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  transform: translateX(-50%);
+  color: maroon;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: .32em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #fff;  
+}
+
+.splitHr:before, .splitHr:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    content: '';
+}
+
+.splitHr:before {
+  left: 0;
+}
+
+.splitHr:after {
+  right: 0;
+}
