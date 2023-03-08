@@ -4,6 +4,7 @@ env:
   REACT_APP_SITE_KEY: ${{ secrets.SITE_KEY }}
   REACT_APP_SECRET_KEY: ${{ secrets.SECRET_KEY }}
   REACT_APP_NAME: ${{ secrets.APP_NAME }}
+  REACT_APP_GIVEBUTTER_TOKEN: ${{ secrets.GIVEBUTTER_TOKEN }}
 jobs:
   build_and_preview:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"

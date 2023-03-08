@@ -40,7 +40,7 @@ const Home=()=>{
                                     {p.description.substring(0, 200)}
                                     {p.description.length>200&&<span> ...</span>}
                                 </MDBCardText>
-                                {p.details&&<MDBBtn style={{background: "linear-gradient(#e66465, #9198e5)"}} href={`/programs/${p.title.replace(" ", "").toLowerCase()}`}>READ MORE</MDBBtn>}
+                                {p.url&&<MDBBtn style={{background: "linear-gradient(#e66465, #9198e5)"}} href={`/programs/${p.url}`}>LEARN MORE</MDBBtn>}
                             </MDBCardFooter>
                         </MDBCard>
                         </MDBCol>

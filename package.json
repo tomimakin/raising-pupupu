@@ -1,5 +1,5 @@
 {
-  "name": "herducate",
+  "name": "raising-pupupu",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,10 +10,13 @@
     "autoprefixer": "10.4.5",
     "firebase": "^9.17.1",
     "mdb-react-ui-kit": "^5.1.0",
+    "mdbreact": "^5.2.0",
+    "moment": "^2.29.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
+    "sweetalert": "^2.1.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -1,26 +1,36 @@
 import React, { useState } from "react";
 import { MDBTextArea, MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import Background from "../components/Background";
+import SendEmail from "../functions/SendEmail";
 
+const initialState = {
+    first_name: "",
+    last_name: "",
+    email: "",
+    message: "",
+};
 const Contact=()=>{
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
     const [contactError, setContactError] = useState("");
+    const [contactForm, setContactForm] = useState(initialState);
 
     const handleSendMessage=()=>{
         setContactError("");
-        if(!firstName || !lastName || !message || !email){
+        if(!contactForm["first_name"] || !contactForm["last_name"] || !contactForm["message"] || !contactForm["email"]){
             setContactError("All fields are required");
             return;
         }
         const emailregex = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i;
-        if (!emailregex.test(email)){
+        if (!emailregex.test(contactForm.email)){
             setContactError("Invalid Email Address");
             return;
         }
-        console.log("I get here");
+        let data = {};
+        data.from = contactForm.email;
+        data.subject = `Message from ${contactForm.first_name} ${contactForm.last_name}`;
+        data.to = process.env.REACT_APP_EMAIL_RECIPIENT;
+        data.message = contactForm.message;
+
+        SendEmail(data);
     }
 
     return (
@@ -29,10 +39,10 @@ const Contact=()=>{
             <div className="main-content">
                 <div>
                     <h2 className="text-center">Send us a message</h2>
-                    <MDBInput label="First Name" type="text" onChange={(e)=>setFirstName(e.target.value)}/><br />
-                    <MDBInput label="Last Name" type="text" onChange={(e)=>setLastName(e.target.value)}/><br />
-                    <MDBInput label="Email Address" type="email" onChange={(e)=>setEmail(e.target.value)}/><br />
-                    <MDBTextArea label="Enter your Message" rows={4} onChange={(e)=>setMessage(e.target.value)}/>
+                    <MDBInput label="First Name" type="text" value={contactForm["first_name"] || ""} onChange={(e)=>setContactForm((prev) => {return {...prev, "first_name": e.target.value }})} size="sm" /><br />
+                    <MDBInput label="Last Name" type="text" value={contactForm["last_name"] || ""} onChange={(e)=>setContactForm((prev) => {return {...prev, "last_name": e.target.value }})} size="sm" /><br />
+                    <MDBInput label="Email Address" type="email" value={contactForm["email"] || ""} onChange={(e)=>setContactForm((prev) => {return {...prev, "email": e.target.value }})} size="sm" /><br />
+                    <MDBTextArea label="Enter your Message" rows={4} value={contactForm["message"] || ""} onChange={(e)=>setContactForm((prev) => {return {...prev, "message": e.target.value }})} size="sm" />
                     {contactError&&<span style={{color: "red"}}>{contactError}</span>}<br />
                     <MDBBtn className="w-100" style={{ backgroundColor: "#070630"}} onClick={handleSendMessage}>Send Message</MDBBtn>
                     {/* <MDBCaptcha theme="dark"/> */}

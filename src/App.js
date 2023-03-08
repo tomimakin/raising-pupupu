@@ -9,6 +9,10 @@ import Footer from "./screens/Footer";
 import Fundraise from "./screens/support/FundRaise";
 import Volunteer from "./screens/support/Volunteer";
 import SchoolUpgrades from "./screens/programs/SchoolUpgrades";
+import NotFound from "./screens/NotFound";
+import Contacts from "./screens/admin/Contacts";
+import SchoolFees from "./screens/programs/SchoolFees";
+import SmallBusinessFunds from "./screens/programs/SmallBusinessFunds";
 
 function App() {
   return (
@@ -28,7 +32,10 @@ function App() {
         <Route path="/support/fundraise" element={<Fundraise />} />
         <Route path="/support/volunteer" element={<Volunteer />} />
         <Route path="/programs/schoolupgrades" element={<SchoolUpgrades />} />
-        {/* <Route path="*" element={<NoPage />} /> */}
+        <Route path="/programs/sbfunds" element={<SmallBusinessFunds />} />
+        <Route path="/programs/schoolfees" element={<SchoolFees/>} />
+        <Route path="/admin/contacts" element={<Contacts />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       </BrowserRouter>

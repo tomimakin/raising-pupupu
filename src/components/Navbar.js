@@ -56,6 +56,19 @@ const Navbar=()=>{
               </MDBDropdown>
             </MDBNavbarItem>
             <MDBNavbarItem>
+              <MDBDropdown>
+                <MDBDropdownToggle tag="a" className="nav-link" role="button">
+                  PROGRAMS
+                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem link href="/programs/schoolupgrades">School Upgrades</MDBDropdownItem>
+                  <MDBDropdownItem link href="/programs/schoolfees">School Fees</MDBDropdownItem>
+                  <MDBDropdownItem link href="/programs/sbfunds">Small Business Funds</MDBDropdownItem>
+                  <MDBDropdownItem link href="/programs/soalimi">S.O.Alimi Competition</MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
               <MDBNavbarLink href="/contact">
                 CONTACT US
               </MDBNavbarLink>
