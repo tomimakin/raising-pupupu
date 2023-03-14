@@ -3,8 +3,9 @@ import winston from "winston";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import cors from "cors";
-import {addNewContact, contacts} from "./givebutter/contacts.js";
-import {campaigns, addNewCampaign, addNewTransaction} from "./givebutter/campaigns.js";
+import {addNewContact, contacts, editContact, removeContact} from "./givebutter/contacts.js";
+import {campaigns, addNewCampaign, editCampaign, removeCampaign, addNewTransaction} from "./givebutter/campaigns.js";
+import auth from "./middleware/authorizeUser.js";
 
 const app = express();
 const port = 3999;
@@ -26,7 +27,7 @@ const logger = winston.createLogger({
   ],
 });
 
-app.post("/sendEmail", (req, res) => {
+app.post("/sendEmail", [auth.validateOrigin], (req, res) => {
     const transporter = nodemailer.createTransport({
         host: "smtp.ionos.com",
         port: 587,
@@ -55,43 +56,21 @@ app.post("/sendEmail", (req, res) => {
     });
 });
 
-// let options = {
-//     method: "GET",
-//     headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json",
-//         "Authorization": `Bearer ${process.env.GIVEBUTTER_TOKEN}`
-//     }
-// };
+app.get("/campaigns", [auth.validateOrigin], campaigns);
+app.post("/campaign", [auth.validateOrigin], addNewCampaign);
+app.patch("/campaign", [auth.validateOrigin, auth.validateToken], editCampaign);
+app.delete("/campaign", [auth.validateOrigin, auth.validateToken], removeCampaign);
 
-// app.post("/campaign", (req, res) => {
-//     options.method = "POST";
-//     let jsonBody = {};
-//     jsonBody.description = req.body.description;
-//     jsonBody.end_at = req.body.end;
-//     jsonBody.goal = req.body.goal;
-//     jsonBody.subtitle = req.body.subtitle;
-//     jsonBody.slug = req.body.slug;
-//     jsonBody.title = req.body.title;
-//     jsonBody.type = req.body.type;
+app.get("/contacts", [auth.validateOrigin], contacts);//, auth.validateToken
+app.post("/contact", [auth.validateOrigin], addNewContact);
+app.patch("/contact", [auth.validateOrigin], editContact); //, auth.validateToken
+app.delete("/contact", [auth.validateOrigin], removeContact); //, auth.validateToken
 
-//     options.body = JSON.stringify(jsonBody);
+app.post("/transaction", [auth.validateOrigin], addNewTransaction); //, auth.validateToken
 
-//     fetch("https://api.givebutter.com/v1/campaigns", options)
-//     .then(response => response.json())
-//     .then(response => res.send(response))
-//     .catch(err => res.status(500).send(err));
-// });
-
-app.get("/campaigns", campaigns);
-app.post("/campaign", addNewCampaign);
-
-app.get("/contacts", contacts);
-app.post("/contact", addNewContact);
-
-app.post("/transaction", addNewTransaction);
-
-app.get("/auth", (req, res) => {});
+app.get("/auth", (req, res) => {
+    //
+});
 
 app.listen(port, () => {
     logger.info(`app listening on http://localhost:${port}`);

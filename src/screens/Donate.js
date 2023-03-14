@@ -19,11 +19,11 @@ const Donate=()=>{
                         </div>
                     </MDBCol>
                     <MDBCol>
-                        <div className="text-center">
+                        {/* <div className="text-center">
                             <h2>Donate With Zelle</h2>
                             <p>Search for us using the email: info@raisingpupupu.org</p>
                             <h1 style={{color: "green"}}>OR</h1>
-                        </div>
+                        </div> */}
                         <div>
                             {/* style={{ maxWidth: "601px" }} */}
                             <iframe src="https://givebutter.com/embed/c/eRq6E2" title="donate" width="100%" height="615px" name="givebutter" seamless allowpaymentrequest="true"></iframe>

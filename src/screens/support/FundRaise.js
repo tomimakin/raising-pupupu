@@ -23,7 +23,7 @@ const Fundraise=()=>{
     const createFundraiseCampaign=async()=>{
         let res;
         try{
-            res = await CreateCampaign(campaign);
+            res = await CreateCampaign(campaign, "POST");
         }
         catch(ex) {
             console.log("Error creating campaign");

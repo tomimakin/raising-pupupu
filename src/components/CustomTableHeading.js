@@ -8,7 +8,7 @@ const CustomTableHeading=(props)=>{
     <MDBTableHead>
         <tr>
             {heading &&heading.map((h, i)=>(
-            <th scope="col" key={i}>{h}</th>
+            <th scope="col" key={i}>{h.toUpperCase()}</th>
             ))}
             <th></th>
         </tr>

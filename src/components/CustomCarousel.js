@@ -6,7 +6,6 @@ import {
 
 const CustomCarousel=(props)=> {
     const {carou} = props;
-    console.log(props)
     return (
     <MDBCarousel showControls fade>
         {carou.map((d, i)=>(

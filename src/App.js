@@ -13,6 +13,7 @@ import NotFound from "./screens/NotFound";
 import Contacts from "./screens/admin/Contacts";
 import SchoolFees from "./screens/programs/SchoolFees";
 import SmallBusinessFunds from "./screens/programs/SmallBusinessFunds";
+import Campaigns from "./screens/admin/Campaigns";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/programs/sbfunds" element={<SmallBusinessFunds />} />
         <Route path="/programs/schoolfees" element={<SchoolFees/>} />
         <Route path="/admin/contacts" element={<Contacts />} />
+        <Route path="/admin/campaigns" element={<Campaigns />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

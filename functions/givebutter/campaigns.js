@@ -1,4 +1,6 @@
-import { getCampaigns, addCampaign, addTransaction } from "./givebutter.js";
+import { getCampaigns, addCampaign, addTransaction, 
+  updateCampaign, deleteCampaign
+} from "./givebutter.js";
 import winston from "winston";
 
 const logger = winston.createLogger({
@@ -35,6 +37,34 @@ export async function addNewCampaign(req, res) {
   });
 }
 
+export async function editCampaign(req, res) {
+  const campaignData = {
+    id: req.body.id,
+    description: req.body.description,
+    goal: req.body.goal,
+    title: req.body.title,
+    type: req.body.type,
+  }
+  updateCampaign(process.env.GIVEBUTTER_TOKEN, campaignData)
+  .then(() => {
+    res.status(200).send({message: "OK"});
+  })
+  .catch(error => {
+    logger.error(error, "Error Editing Campaign");
+    res.status(500).end();
+  });
+}
+
+export async function removeCampaign(req, res) {
+  deleteCampaign(process.env.GIVEBUTTER_TOKEN, req.body.id)
+  .then(() => {
+    res.status(200).send({message: "OK"});
+  })
+  .catch(error => {
+    logger.error(error, "Error Deleting Campaign");
+    res.status(500).end();
+  });
+}
 
 export async function addNewTransaction(req, res) {
   // const amount = 1000; // $10.00 in cents

@@ -1,6 +1,6 @@
-const CreateContact = async(dets)=>{
+const CreateContact = async(dets, mtd)=>{
     const response = await fetch(`${process.env.REACT_APP_API_URL}contact`, {
-        method: "POST",
+        method: mtd,
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",

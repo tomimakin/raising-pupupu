@@ -1,6 +1,6 @@
-const CreateCampaign = async(dets)=>{
+const CreateCampaign = async(dets, mtd)=>{
     const response = await fetch(`${process.env.REACT_APP_API_URL}campaign`, {
-        method: "POST",
+        method: mtd,
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",

@@ -14,6 +14,8 @@ ONGOING
 
 todo
 
+- can add transaction, update contact - tag and email
+
 - admin page - access via authentication
 - not found page vertically centered
 - not found image: create on canva road with person looking lost
