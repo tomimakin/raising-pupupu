@@ -78,12 +78,12 @@ const Footer=()=> {
                         <p><MDBIcon icon="phone" className="me-3" /> +1 513 275 7398</p>
                         <p><MDBIcon icon="home" className="me-3" /> P.O.Box 62566, Cincinnati, OH 45262</p>
                         <br />
-                        <p>
+                        {/* <p>
                             <a href="#!" className="me-4 text-reset"><MDBIcon fab icon="facebook-f" /></a>
-                            {/* <a href="#!" className="me-4 text-reset"><MDBIcon fab icon="twitter" /></a>
-                            <a href="#!" className="me-4 text-reset"><MDBIcon fab icon="google" /></a> */}
+                            <a href="#!" className="me-4 text-reset"><MDBIcon fab icon="twitter" /></a>
+                            <a href="#!" className="me-4 text-reset"><MDBIcon fab icon="google" /></a>
                             <a href="#!" className="me-4 text-reset"><MDBIcon fab icon="instagram" /></a>
-                        </p>
+                        </p> */}
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>

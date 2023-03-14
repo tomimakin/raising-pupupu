@@ -10,7 +10,7 @@ import swal from "sweetalert";
 import CustomPagination from "../../components/CustomPagination";
 
 const heading = ["Title", "Type", "Status", "Goal", "Raised", "URL"];
-let pageSize = 2;
+let pageSize = 5;
 
 const Campaigns=()=>{
     const [data, setData] = useState([]);

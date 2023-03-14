@@ -211,14 +211,14 @@ const Contacts=()=>{
                     <MDBModalContent>
                         <MDBModalHeader>
                             <MDBModalTitle className="text-center">New Donation</MDBModalTitle>
-                            <MDBBtn className="btn-close" color="none" onClick={() => setTModalOpen(!modalOpen)}></MDBBtn>
+                            <MDBBtn className="btn-close" color="none" onClick={() => setTModalOpen(!tmodalOpen)}></MDBBtn>
                         </MDBModalHeader>
                         <MDBModalBody>
                             <form>
                                 <div className="mb-3">
                                     <select className="form-control" value={transaction.campaign_code||""}
                                         onChange={(e)=>setTransaction((prev) => {return {...prev, "campaign_code": e.target.value }})}>
-                                        <option value="" disabled>Select Campaign Type:</option>
+                                        <option value="" disabled>Select Campaign:</option>
                                         {campaigns.map(c=>(
                                             <option key={c.id} value={c.code}>{c.title}</option>
                                         ))}
