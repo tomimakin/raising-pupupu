@@ -3,13 +3,14 @@ import React from "react";
 import Background from "../../components/Background";
 import CustomCarousel from "../../components/CustomCarousel";
 
-const carouselData=[
-    {
-        "url": "https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg",
-        "title": "Fatima",
-        "details": "Financial assistance to study at the University of xxx"
-    },
-];
+// const carouselData=[
+//     {
+//         "url": "https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg",
+//         "title": "Fatima",
+//         "details": "Financial assistance to study at the University of xxx"
+//     },
+// ];
+const carouselData=[];
 
 const SchoolFees=()=>{
     return (
@@ -32,10 +33,11 @@ const SchoolFees=()=>{
                     </MDBCol>
                 </MDBRow>
                 <br />
+                {carouselData.length>0&&
                 <div>
                     <h3 className="text-center">Our Scholarship Recipients</h3>
                     <CustomCarousel carou={carouselData}/>
-                </div>
+                </div>}
             </div>
         </div>
     );

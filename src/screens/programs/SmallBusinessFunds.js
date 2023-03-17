@@ -3,13 +3,15 @@ import React from "react";
 import Background from "../../components/Background";
 import CustomCarousel from "../../components/CustomCarousel";
 
-const carouselData=[
-    {
-        "url": "https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg",
-        "title": "Adeyemo – mom of 3, funds to sell food stuff from stall in front of their house",
-        // "details": "Started: 2022-09-09. Status: Ongoing."
-    },
-];
+const carouselData=[];
+
+// const carouselData=[
+//     {
+//         "url": "https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg",
+//         "title": "Adeyemo – mom of 3, funds to sell food stuff from stall in front of their house",
+//         // "details": "Started: 2022-09-09. Status: Ongoing."
+//     },
+// ];
 
 const SmallBusinessFunds=()=>{
     return (
@@ -26,10 +28,11 @@ const SmallBusinessFunds=()=>{
                     </MDBCol>
                 </MDBRow>
                 <br />
+                {carouselData.length>0&&
                 <div>
                     <h3 className="text-center">Small Business Fund Recipients</h3>
                     <CustomCarousel carou={carouselData}/>
-                </div>
+                </div>}
             </div>
         </div>
     );

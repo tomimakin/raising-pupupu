@@ -6,6 +6,7 @@ import cors from "cors";
 import {addNewContact, contacts, editContact, removeContact} from "./givebutter/contacts.js";
 import {campaigns, addNewCampaign, editCampaign, removeCampaign, addNewTransaction} from "./givebutter/campaigns.js";
 import auth from "./middleware/authorizeUser.js";
+import functions from "firebase-functions";
 
 const app = express();
 const port = 3999;
@@ -61,17 +62,20 @@ app.post("/campaign", [auth.validateOrigin], addNewCampaign);
 app.patch("/campaign", [auth.validateOrigin, auth.validateToken], editCampaign);
 app.delete("/campaign", [auth.validateOrigin, auth.validateToken], removeCampaign);
 
-app.get("/contacts", [auth.validateOrigin], contacts);//, auth.validateToken
+app.get("/contacts", [auth.validateOrigin], contacts);
 app.post("/contact", [auth.validateOrigin], addNewContact);
-app.patch("/contact", [auth.validateOrigin], editContact); //, auth.validateToken
-app.delete("/contact", [auth.validateOrigin], removeContact); //, auth.validateToken
+app.patch("/contact", [auth.validateOrigin, auth.validateToken], editContact);
+app.delete("/contact", [auth.validateOrigin, auth.validateToken], removeContact);
 
-app.post("/transaction", [auth.validateOrigin], addNewTransaction); //, auth.validateToken
+app.post("/transaction", [auth.validateOrigin, auth.validateToken], addNewTransaction);
 
-app.get("/auth", (req, res) => {
-    //
+app.get("/auth", [auth.validateOrigin, auth.validateToken], (req, res) => {
+    res.status(200).end();
 });
 
 app.listen(port, () => {
     logger.info(`app listening on http://localhost:${port}`);
 });
+
+
+export const api = functions.https.onRequest(app);

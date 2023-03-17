@@ -28,9 +28,10 @@ const programs=[
     },
     { 
         title: "S.O.Alimi Competition",
-        description: "Some info about S.O.Alimi Competition",
+        description: "We host reading and quiz competitions for primary and secondary school students as well as singing competitions for women.",
         imageSrc: "https://mdbootstrap.com/img/new/standard/city/044.webp",
-        imageAlt: "..."
+        imageAlt: "...",
+        url: "soalimi",
     },
 ];
 

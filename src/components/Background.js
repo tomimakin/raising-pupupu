@@ -10,7 +10,7 @@ const Background=(props)=>{
                 <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.6)" }}>
                     <div className="d-flex justify-content-center align-items-center h-100">
                         <div className="text-white">
-                            <h1 className="mb-3 text-uppercase">{heading}</h1>
+                            <h1 className="mb-3 text-uppercase pt-3">{heading}</h1>
                             <p>{subheading}</p>
                             <i className='mb-3'>{quote}</i><br />
                             {showDonate &&<MDBBtn outline size="lg" color="danger" style={{color: "white"}} href="/donate">

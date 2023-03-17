@@ -15,14 +15,19 @@ import {
   MDBDropdownItem,
   MDBCollapse,
 } from "mdb-react-ui-kit";
+import { ClearCache } from "../functions/ClearCache";
 
 const Navbar=()=>{
   const [showBasic, setShowBasic] = useState(false);
 
+  const logout=()=>{
+    ClearCache();
+  }
+
   return (
     <MDBNavbar expand="lg" fixed="top" light bgColor="light">
       <MDBContainer fluid>
-        <MDBNavbarBrand href="/">{process.env.REACT_APP_NAME}</MDBNavbarBrand>
+        <MDBNavbarBrand href="/" style={{color: "#0a3b24", fontWeight: "bolder"}}>{process.env.REACT_APP_NAME}</MDBNavbarBrand>
         <MDBNavbarToggler
           type="button"
           onClick={() => setShowBasic(!showBasic)}
@@ -31,6 +36,19 @@ const Navbar=()=>{
         </MDBNavbarToggler>
         <MDBCollapse navbar show={showBasic}>
           <MDBNavbarNav right fullWidth={false} className="mb-2 mb-lg-0">
+            {localStorage.getItem("user")==="groot"&&
+            <MDBNavbarItem>
+              <MDBDropdown>
+                <MDBDropdownToggle tag="a" className="nav-link" role="button">
+                  ADMIN
+                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem link href="/admin/contacts">Contacts</MDBDropdownItem>
+                  <MDBDropdownItem link href="/admin/campaigns">Campaigns</MDBDropdownItem>
+                  <MDBBtn outline color="danger" className="w-100 p-2" onClick={logout}>LOGOUT</MDBBtn>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavbarItem>}
             <MDBNavbarItem>
               <MDBDropdown>
                 <MDBDropdownToggle tag="a" className="nav-link" role="button">
@@ -64,7 +82,7 @@ const Navbar=()=>{
                   <MDBDropdownItem link href="/programs/schoolupgrades">School Upgrades</MDBDropdownItem>
                   <MDBDropdownItem link href="/programs/schoolfees">School Fees</MDBDropdownItem>
                   <MDBDropdownItem link href="/programs/sbfunds">Small Business Funds</MDBDropdownItem>
-                  {/* <MDBDropdownItem link href="/programs/soalimi">S.O.Alimi Competition</MDBDropdownItem> */}
+                  <MDBDropdownItem link href="/programs/soalimi">S.O.Alimi Competition</MDBDropdownItem>
                 </MDBDropdownMenu>
               </MDBDropdown>
             </MDBNavbarItem>

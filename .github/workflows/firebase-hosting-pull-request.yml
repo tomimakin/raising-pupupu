@@ -5,6 +5,8 @@ env:
   REACT_APP_SECRET_KEY: ${{ secrets.SECRET_KEY }}
   REACT_APP_NAME: ${{ secrets.APP_NAME }}
   REACT_APP_GIVEBUTTER_TOKEN: ${{ secrets.GIVEBUTTER_TOKEN }}
+  REACT_APP_API_KEY: ${{ secrets.PROJECT_API_KEY }}
+  REACT_APP_PROJECT_ID: ${{ secrets.PROJECT_ID }}
 jobs:
   build_and_preview:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"

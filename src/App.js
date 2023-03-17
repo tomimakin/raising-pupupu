@@ -14,6 +14,8 @@ import Contacts from "./screens/admin/Contacts";
 import SchoolFees from "./screens/programs/SchoolFees";
 import SmallBusinessFunds from "./screens/programs/SmallBusinessFunds";
 import Campaigns from "./screens/admin/Campaigns";
+import Login from "./screens/admin/Login";
+import SOAlimi from "./screens/programs/SOAlimi";
 
 function App() {
   return (
@@ -34,9 +36,11 @@ function App() {
         <Route path="/support/volunteer" element={<Volunteer />} />
         <Route path="/programs/schoolupgrades" element={<SchoolUpgrades />} />
         <Route path="/programs/sbfunds" element={<SmallBusinessFunds />} />
-        <Route path="/programs/schoolfees" element={<SchoolFees/>} />
-        <Route path="/admin/contacts" element={<Contacts />} />
-        <Route path="/admin/campaigns" element={<Campaigns />} />
+        <Route path="/programs/schoolfees" element={<SchoolFees />} />
+        <Route path="/programs/soalimi" element={<SOAlimi />} />
+        <Route path="/admin/contacts" element={localStorage.getItem("user")==="groot"?<Contacts />:<Login/>} />
+        <Route path="/admin/campaigns" element={localStorage.getItem("user")==="groot"?<Campaigns />:<Login/>} />
+        <Route path="/admin" element={<Login/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

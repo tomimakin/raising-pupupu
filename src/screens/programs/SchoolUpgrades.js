@@ -2,19 +2,20 @@ import { MDBRow, MDBCol } from "mdb-react-ui-kit";
 import React from "react";
 import Background from "../../components/Background";
 import CustomCarousel from "../../components/CustomCarousel";
+const carouselData=[];
 
-const carouselData=[
-    {
-        "url": "https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg",
-        "title": "Assembly hall in Ansar Ud Dean, Yemaja, Ondo Town",
-        "details": "Started: 2022-09-09. Status: Ongoing."
-    },
-    {
-        "url": "https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg",
-        "title": "Assembly hall in Ansar Ud Dean, Oke Lisa, Ondo Town",
-        "details": "Started: 2022-09-09. Status: Ongoing."
-    },
-];
+// const carouselData=[
+//     {
+//         "url": "https://mdbootstrap.com/img/Photos/Slides/img%20(23).jpg",
+//         "title": "Assembly hall in Ansar Ud Dean, Yemaja, Ondo Town",
+//         "details": "Started: 2022-09-09. Status: Ongoing."
+//     },
+//     {
+//         "url": "https://mdbootstrap.com/img/Photos/Slides/img%20(22).jpg",
+//         "title": "Assembly hall in Ansar Ud Dean, Oke Lisa, Ondo Town",
+//         "details": "Started: 2022-09-09. Status: Ongoing."
+//     },
+//];
 
 const SchoolUpgrades=()=>{
     return (
@@ -43,10 +44,11 @@ const SchoolUpgrades=()=>{
                     </MDBCol>
                 </MDBRow>
                 <br />
+                {carouselData.length>0&&
                 <div>
                     <h3 className="text-center">Past, Ongoing and Upcoming Projects</h3>
                     <CustomCarousel carou={carouselData}/>
-                </div>
+                </div>}
             </div>
         </div>
     );
