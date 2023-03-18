@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Background from "../components/Background";
 import { MDBRow, MDBCol, MDBCard, MDBCardImage, 
     MDBCardFooter, MDBCardTitle, MDBCardText, MDBBtn 
 } from "mdb-react-ui-kit";
 import config from "../config";
+import GetCampaigns from "../functions/GetCampaigns";
 
 const Home=()=>{
+    const [total, setTotal]=useState(0);
+
+    useEffect(()=>{
+        const getTotal=async()=>{
+            let t = await GetCampaigns();
+            setTotal(t.reduce((t, v)=>v.raised+t, 0));
+        }
+        getTotal();
+    }, []);
+
     return (
         <div>
             <Background heading="Who are we" quote={"\"One in every five of the world’s out-of-school children is in Nigeria.\" - UNICEF"}
@@ -27,7 +38,6 @@ const Home=()=>{
                 </div>
                 <br />
                 <h2 className="text-center" style={{color: "#00008B", textDecoration: "underline"}}>OUR PROGRAMS</h2>
-                {/* <hr style={{ height: 5 }}/> */}
                 <div>
                     <MDBRow>
                     {config.programs.map((p, i)=>(
@@ -47,11 +57,10 @@ const Home=()=>{
                     ))}
                     </MDBRow>
                 </div>
-                {/* <div style={{display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 10}}>
-                    <div style={{ borderStyle: "outset"}}>one</div>
-                    <div style={{ borderStyle: "outset"}}>one</div>
-                    <div style={{ borderStyle: "outset"}}>one</div>
-                </div> */}
+                <div className="mt-3 text-center" style={{background: "#1C202D", color: "#eee"}}>
+                    <br />Total Raised Since 2023<br />
+                    <span style={{fontSize: 40}}>${total}</span><br />
+                </div>
             </div>
         </div>
     );

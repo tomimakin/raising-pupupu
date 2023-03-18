@@ -19,7 +19,7 @@ const programs=[
         imageAlt: "...",
         url: "schoolupgrades",
     },
-    { 
+    {
         title: "Funds for Small Businesses",
         description: "We help women-owned small businesses access the capital they need to start, expand, hire new employees, purchase inventory, and more.",
         imageSrc: "https://mdbootstrap.com/img/new/standard/city/044.webp",

@@ -20,8 +20,8 @@ const Bio=(props)=>{
             return require("../images/noimage.jfif");
         }
     }
-    
-    if(bods.length===0)return(<div><h1 className="text-center">No Data!!</h1></div>)
+
+    if(bods.length===0)return(<div><h1 className="text-center">Coming Soon!!!</h1></div>)
 
     return (
         <div>
