@@ -67,13 +67,15 @@ export async function removeCampaign(req, res) {
 }
 
 export async function addNewTransaction(req, res) {
-  // const amount = 1000; // $10.00 in cents
-  // const transactionDetails = {
-  //   donor_name: 'John Doe',
-  //   donor_email: 'johndoe@example.com',
-  //   payment_method: 'card'
-  // };
-  addTransaction(process.env.GIVEBUTTER_TOKEN, req.body.campaignName, req.body.amountInCents, req.body.transactionDetails)
+  const trans = {
+    contact_id: req.body.contact_id,
+    "first_name": "Dude",
+    "last_name": "Makin",
+    campaign_code: req.body.campaign_code,
+    method: req.body.payment_method,
+    amount: req.body.amount,
+  }
+  addTransaction(process.env.GIVEBUTTER_TOKEN, trans)
   .then(() => {
     res.status(200).send({message: "OK"});
   })

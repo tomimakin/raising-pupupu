@@ -92,20 +92,12 @@ async function deleteCampaign(apiToken, campaignId) {
   return response.data.data;
 }
 
-async function addTransaction(apiToken, campaignName, amount, transactionDetails) {
-  const response = await axios.post(`https://api.givebutter.com/v1/campaigns/${campaignName}/transactions`, {
-    data: {
-      type: 'transaction',
-      attributes: {
-        amount: amount,
-        ...transactionDetails
-      }
-    }
-  }, {
+async function addTransaction(apiToken, transactionDetails) {
+  const response = await axios.post(`https://api.givebutter.com/v1/transactions`, transactionDetails, {
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${apiToken}`
-    }
+    },
   });
 
   return response.data.data;

@@ -62,7 +62,7 @@ app.post("/campaign", [auth.validateOrigin], addNewCampaign);
 app.patch("/campaign", [auth.validateOrigin, auth.validateToken], editCampaign);
 app.delete("/campaign", [auth.validateOrigin, auth.validateToken], removeCampaign);
 
-app.get("/contacts", [auth.validateOrigin], contacts);
+app.get("/contacts", [auth.validateOrigin, auth.validateToken], contacts);
 app.post("/contact", [auth.validateOrigin], addNewContact);
 app.patch("/contact", [auth.validateOrigin, auth.validateToken], editContact);
 app.delete("/contact", [auth.validateOrigin, auth.validateToken], removeContact);

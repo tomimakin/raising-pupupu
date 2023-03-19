@@ -9,7 +9,7 @@ const NotFound=()=> {
             <div className="main-content">
             <MDBRow>
                 <MDBCol md="7">
-                    <img src="https://mdbootstrap.com/img/new/standard/city/044.webp" alt="..." width="100%"/>
+                    <img src={require("../images/404.png")} alt="..." width="100%"/>
                 </MDBCol>
                     <MDBCol>
                       <div className="centeredDiv">

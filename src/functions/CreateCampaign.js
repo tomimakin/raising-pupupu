@@ -1,7 +1,7 @@
 import { getToken } from "./IsValidToken";
 
 const CreateCampaign = async(dets, mtd)=>{
-    const usr = getToken();
+    const usr = await getToken();
     const response = await fetch(`${process.env.REACT_APP_API_URL}campaign`, {
         method: mtd,
         headers: {

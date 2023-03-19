@@ -19,7 +19,7 @@ const SchoolFees=()=>{
             <div className="main-content">
                 <MDBRow>
                     <MDBCol md="3">
-                        <img src="https://mdbootstrap.com/img/new/standard/city/044.webp" alt="..." width="100%"/>
+                        <img src={require("../../images/students.png")} alt="..." width="100%"/>
                     </MDBCol>
                     <MDBCol md="9">
                         Our mission is to provide financial assistance to eligible female students to cover the costs of school and exam fees. We believe that education is a fundamental human right and that all students should have access to quality education regardless of their socio-economic background. We understand the significant financial barriers that can prevent female students from pursuing their education and we aim to bridge the gap by providing support that can help these students stay in school and achieve their academic goals. We provide financial assistance to cover the costs of the following: 

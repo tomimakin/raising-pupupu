@@ -43,7 +43,7 @@ const Home=()=>{
                     {config.programs.map((p, i)=>(
                         <MDBCol md="4" key={i}>
                         <MDBCard className="h-100">
-                            <MDBCardImage src={p.imageSrc} alt={p.imageAlt} position="top" width="375" height="250"/>
+                            <MDBCardImage src={require(`../images/${p.imageSrc}`)} alt={p.imageAlt} position="top" width="375" height="250"/>
                             <MDBCardFooter>
                                 <MDBCardTitle>{p.title.toUpperCase()}</MDBCardTitle>
                                 <MDBCardText>
