@@ -20,7 +20,7 @@ const SmallBusinessFunds=()=>{
             <div className="main-content">
                 <MDBRow>
                     <MDBCol md="3">
-                        <img src="https://mdbootstrap.com/img/new/standard/city/044.webp" alt="..." width="100%"/>
+                        <img src={require("../../images/smallbusiness.png")} alt="..." width="100%"/>
                     </MDBCol>
                     <MDBCol md="9">
                         We are dedicated to supporting women-owned small businesses in Nigeria. We provide interest free loans to eligible women entrepreneurs to help them start, grow and scale their businesses. 

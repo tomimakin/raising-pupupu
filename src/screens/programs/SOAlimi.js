@@ -20,7 +20,7 @@ const SOAlimi=()=>{
             <div className="main-content">
                 <MDBRow>
                     <MDBCol md="3">
-                        <img src={require("../../images/competition.png")} alt="..." width="100%"/>
+                        <img src={require("../../images/soalimi.png")} alt="..." width="100%"/>
                     </MDBCol>
                     <MDBCol md="9">
                         We are committed to promoting education and community engagement among primary and secondary school students. Our events include reading, debates, sports and quiz competitions for students, as well as singing competitions for women. We provide food, drinks, gifts, and money to all attendees, including participants, parents, and guests.

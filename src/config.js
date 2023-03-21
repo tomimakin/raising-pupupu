@@ -29,7 +29,7 @@ const programs=[
     { 
         title: "S.O.Alimi Competition",
         description: "We host reading and quiz competitions for primary and secondary school students as well as singing competitions for women.",
-        imageSrc: "jamb.png",
+        imageSrc: "soalimi.png",
         imageAlt: "...",
         url: "soalimi",
     },
