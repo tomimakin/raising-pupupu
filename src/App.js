@@ -6,7 +6,7 @@ import About from "./screens/About";
 import Contact from "./screens/Contact";
 import Donate from "./screens/Donate";
 import Footer from "./screens/Footer";
-import Fundraise from "./screens/support/FundRaise";
+import Fundraise from "./screens/support/Fundraise";
 import Volunteer from "./screens/support/Volunteer";
 import SchoolUpgrades from "./screens/programs/SchoolUpgrades";
 import NotFound from "./screens/NotFound";

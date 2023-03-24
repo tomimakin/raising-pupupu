@@ -2,11 +2,7 @@
   "functions": [
     {
       "source": "functions",
-      "codebase": "default"
-    },
-    {
-      "source": "raising-pupupu",
-      "codebase": "raising-pupupu",
+      "codebase": "default",
       "ignore": [
         "node_modules",
         ".git",
