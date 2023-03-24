@@ -52,7 +52,7 @@ const Fundraise=()=>{
             <Background heading="Fundraise" quote={"\"The power of one, if fearless and focused, is formidable, but the power of many working together is better.\" - Gloria Macapagal Arroyo"} showDonate={false}/>
             <div className="main-content">
                 {fundraisers.length===0 && <h2 className="text-center">There are no active fundraisers</h2>}
-                <MDBBtn onClick={()=>setModalOpen(true)} className="w-100" style={{ backgroundColor: "#350202"}}>Setup a Giving Page</MDBBtn>
+                {/* <MDBBtn onClick={()=>setModalOpen(true)} className="w-100" style={{ backgroundColor: "#350202"}}>Setup a Giving Page</MDBBtn> */}
                 <br /><br />
                 <MDBRow className="row-cols-1 row-cols-md-3 g-4">
                     {fundraisers.map(f=>(
