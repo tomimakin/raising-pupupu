@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MDBTextArea, MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import Background from "../components/Background";
 import SendEmail from "../functions/SendEmail";
+import swal from "sweetalert";
 
 const initialState = {
     first_name: "",
@@ -13,7 +14,7 @@ const Contact=()=>{
     const [contactError, setContactError] = useState("");
     const [contactForm, setContactForm] = useState(initialState);
 
-    const handleSendMessage=()=>{
+    const handleSendMessage=async()=>{
         setContactError("");
         if(!contactForm["first_name"] || !contactForm["last_name"] || !contactForm["message"] || !contactForm["email"]){
             setContactError("All fields are required");
@@ -30,7 +31,15 @@ const Contact=()=>{
         data.to = process.env.REACT_APP_EMAIL_RECIPIENT;
         data.message = contactForm.message;
 
-        SendEmail(data);
+        const res = await SendEmail(data);
+        if(res){
+            console.log(res, "res")
+            setContactForm(initialState);
+            swal("Awesome!!", "Message Sent", "success");
+        }
+        else{
+            swal("Sorry :(", "Failed to send message. Please email us directly at info@raisingpupupu.org.", "error");
+        }
     }
 
     return (
