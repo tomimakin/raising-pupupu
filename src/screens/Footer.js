@@ -28,7 +28,7 @@ const Footer=()=> {
         setSubError("");
         let res;
         try{
-            res = await CreateContact(newsLetterPeeps);
+            res = await CreateContact(newsLetterPeeps, "POST");
         }
         catch(ex) {
             console.log("Error subscribing to newsletter");

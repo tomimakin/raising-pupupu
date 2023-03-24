@@ -7,7 +7,7 @@ const CreateCampaign = async(dets, mtd)=>{
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "x-access-token": usr.token
+            "x-access-token": usr?.token
         },
         body: JSON.stringify(dets),
     });

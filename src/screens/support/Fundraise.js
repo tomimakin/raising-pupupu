@@ -24,7 +24,6 @@ const Fundraise=()=>{
         let res;
         try{
             res = await CreateCampaign(campaign, "POST");
-            console.log(res)
         }
         catch(ex) {
             console.log("Error creating campaign");
@@ -60,7 +59,7 @@ const Fundraise=()=>{
                         <MDBCol key={f.id}>
                             <MDBCard className="h-100">
                                 <MDBCardImage
-                                src={f.cover}
+                                src={f.cover.url}
                                 alt={"Image for " + f.title}
                                 position="top"
                                 />
