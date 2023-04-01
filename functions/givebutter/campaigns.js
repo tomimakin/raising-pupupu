@@ -25,6 +25,7 @@ export async function addNewCampaign(req, res) {
     goal: req.body.goal,
     title: req.body.title,
     type: req.body.type,
+    subtitle: req.body.subtitle,
   }
   addCampaign(process.env.GIVEBUTTER_TOKEN, campaignData)
   .then(() => {

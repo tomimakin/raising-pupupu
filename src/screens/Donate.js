@@ -7,6 +7,7 @@ const Donate=()=>{
         <div>
             <Background heading="Donate" quote={"\"It's not how much we give but how much love we put into giving.\" - Mother Teresa"} showDonate={false} />
             <div className="main-content">
+                <p className="text-center" style={{fontStyle: "italic"}}>Raising Pupupu is a 501 (c) (3) public charity. All donations are tax deductible.</p>
                 <MDBRow>
                     <MDBCol md="3">
                         <div>
@@ -21,9 +22,8 @@ const Donate=()=>{
                     <MDBCol>
                         <div>
                             <h1 className="text-center">COMING SOON</h1>
-                            {/* style={{ maxWidth: "601px" }}
-                            <iframe src="https://givebutter.com/embed/c/eRq6E2" title="donate" width="100%" height="615px" name="givebutter" seamless allowpaymentrequest="true"></iframe>
-                            <script src="https://givebutter.com/js/widget.js"></script> */}
+                            {/* style={{ maxWidth: "601px" }}*/}
+                            {/* <iframe src="https://givebutter.com/embed/c/raising-pupupu" title="donate" width="100%" height="615px" name="givebutter" frameborder="0" scrolling="no" seamless allowpaymentrequest></iframe><script src="https://givebutter.com/js/widget.js"></script> */}
                         </div>
                     </MDBCol>
                 </MDBRow>
