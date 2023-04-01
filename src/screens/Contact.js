@@ -33,7 +33,6 @@ const Contact=()=>{
 
         const res = await SendEmail(data);
         if(res){
-            console.log(res, "res")
             setContactForm(initialState);
             swal("Awesome!!", "Message Sent", "success");
         }
