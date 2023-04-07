@@ -1,21 +1,25 @@
 import React from "react";
 import {
     MDBCarousel,
-    MDBCarouselItem,
+    MDBCarouselItem
 } from "mdb-react-ui-kit";
 
 const CustomCarousel=(props)=> {
-    const {carou} = props;
+    const {carou, blkText} = props;
+
     return (
-    <MDBCarousel showControls fade>
+    <div>
+        <h3 className="text-center" style={{textDecoration: "underline", color: "#00091a"}}>{blkText}</h3>
         {carou.map((d, i)=>(
-        <MDBCarouselItem key={i} className="w-100 d-block" itemId={i+1} src={d.url} alt={`Image of ${d.title}`}>
-            <h5>{d.title}</h5>
-            <p>{d.details}</p>
-        </MDBCarouselItem>
+        <div  key={i}>
+            <i>{d.title}</i>
+            <MDBCarousel showControls fade>
+                <MDBCarouselItem key={i} className="w-100 d-sm-block" style={{ fontWeight: "bolder" }} itemId={i + 1} src={d.url} alt={`Image of ${d.title}`}></MDBCarouselItem>
+            </MDBCarousel>
+        </div>
         ))}
-    </MDBCarousel>
-  );
+    </div>
+    );
 }
 
 export default CustomCarousel;

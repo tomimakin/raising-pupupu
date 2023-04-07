@@ -24,7 +24,7 @@ const SchoolUpgrades=()=>{
             <div className="main-content">
                 <MDBRow>
                 <MDBCol md="3">
-                    <img src={require("../../images/upgrades.png")} alt="..." width="100%"/>
+                    <img src={require("../../images/upgrades.jpg")} alt="..." width="100%"/>
                 </MDBCol>
                     <MDBCol md="9">
                         We are committed to supporting schools in need by providing funds for the upgrading of facilities and resources. We believe that every student deserves access to a high-quality education, and we work tirelessly to ensure that schools have the resources they need to meet this goal.

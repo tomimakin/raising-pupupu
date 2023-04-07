@@ -7,12 +7,12 @@ const Donate=()=>{
         <div>
             <Background heading="Donate" quote={"\"It's not how much we give but how much love we put into giving.\" - Mother Teresa"} showDonate={false} />
             <div className="main-content">
-                <p className="text-center" style={{fontStyle: "italic"}}>Raising Pupupu is a 501 (c) (3) public charity. All donations are tax deductible.</p>
+                <p className="text-center" style={{fontStyle: "italic", fontWeight: "bold"}}>Raising Pupupu is a 501 (c) (3) public charity. All donations are tax deductible.</p>
                 <MDBRow>
                     <MDBCol md="3">
                         <div>
                             <MDBCard>
-                                <MDBCardImage src={require("../images/students.png")} position="top" alt="..." />
+                                <MDBCardImage src={require("../images/students.jpg")} position="top" alt="..." />
                                 <MDBCardBody>
                                     <MDBCardText>Donating to support girls' education is an investment in their future and the future of their communities. By helping to break down the barriers that limit girls' access to education, you can make a real and lasting difference in their lives.</MDBCardText>
                                 </MDBCardBody>

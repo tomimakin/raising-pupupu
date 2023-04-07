@@ -9,7 +9,6 @@ import auth from "./middleware/authorizeUser.js";
 import functions from "firebase-functions";
 
 const app = express();
-const port = 3999;
 
 app.use(express.json());
 
@@ -73,9 +72,14 @@ app.get("/auth", [auth.validateOrigin, auth.validateToken], (req, res) => {
     res.status(200).end();
 });
 
-app.listen(port, () => {
-    logger.info(`app listening on http://localhost:${port}`);
-});
+if(process.env.IS_LOCAL==="true"){
+    const port = 3999;
+
+    app.listen(port, () => {
+        logger.info(`app listening on http://localhost:${port}`);
+        logger.info(`allowed - ${JSON.parse(process.env.ALLOWED_ORIGINS)}`);
+    });
+}
 
 
 export const api = functions.https.onRequest(app);

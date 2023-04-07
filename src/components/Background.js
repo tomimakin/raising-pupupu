@@ -4,7 +4,7 @@ import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
 const Background=(props)=>{
     const {
         heading, subheading,
-        url="/images/defaultBg.png",
+        url="/images/defaultBg.jpg",
         quote, showDonate=true, donateText="DONATE NOW", imageHeight="400px"
     } = props;
     return (

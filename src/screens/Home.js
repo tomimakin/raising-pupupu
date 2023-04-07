@@ -58,7 +58,7 @@ const Home=()=>{
                     </MDBRow>
                 </div>
                 <div className="mt-3 text-center" style={{background: "#1C202D", color: "#eee"}}>
-                    <br />Total Raised Since 2023<br />
+                    <br />Total Raised Since March 2023<br />
                     <span style={{fontSize: 40}}>${total}</span><br />
                 </div>
             </div>
