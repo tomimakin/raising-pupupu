@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Background from "../components/Background";
 import { MDBRow, MDBCol, MDBCard, MDBCardImage, 
-    MDBCardFooter, MDBCardTitle, MDBCardText, MDBBtn 
+    MDBCardFooter, MDBCardTitle, MDBCardText, MDBBtn, MDBBadge
 } from "mdb-react-ui-kit";
 import config from "../config";
 import GetCampaigns from "../functions/GetCampaigns";
@@ -56,6 +56,13 @@ const Home=()=>{
                         </MDBCol>
                     ))}
                     </MDBRow>
+                </div>
+                <div className="mt-3 text-center" style={{borderStyle: "inset"}}><h3 style={{color: "#330033"}}>Our Impact</h3>
+                    {config.accomplishments.map((a, i)=>(
+                        <MDBBadge key={i} className="m-2" color={a.color} light>
+                        <MDBBadge className="m-2" pill color={a.color==="dark"?"light":"dark"} light>{a.count}</MDBBadge>{a.title}
+                        </MDBBadge>
+                    ))}
                 </div>
                 <div className="mt-3 text-center" style={{background: "#1C202D", color: "#eee"}}>
                     <br />Total Raised Since March 2023<br />

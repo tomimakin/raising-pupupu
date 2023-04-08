@@ -35,8 +35,46 @@ const programs=[
     },
 ];
 
+const accomplishments = [
+    {
+        title: "University fees",
+        count: "3",
+        color: "dark"
+    },
+    {
+        title: "Jamb fees",
+        count: "4",
+        color: "light"
+    },
+    {
+        title: "ICAN exam fees",
+        count: "1",
+        color: "info"
+    },
+    {
+        title: "Healthcare fees",
+        count: "1",
+        color: "danger"
+    },
+    {
+        title: "Business grants",
+        count: "2",
+        color: "secondary"
+    },
+    {
+        title: "Lecture series with over 180 women in attendance",
+        count: "1"
+    },
+    {
+        title: "Lesson fees to get a boy up to speed",
+        count: "1",
+        color: "dark"
+    },
+];
+
 const config = {
     programs,
+    accomplishments,
 }
 
 export default config;
